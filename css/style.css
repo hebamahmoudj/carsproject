@@ -1,34 +1,36 @@
-@import 'owl.carousel/dist/assets/owl.carousel.css';
-@import 'owl.carousel';
-
-
-
-body{
-    direction: rtl;
-}
-   
-.main-slider,.main-slider img{
-height: 90vh;
+body {
+  direction: rtl;
 }
 
-.main-slider{
-    opacity: .6;
+.main-slider, .main-slider img {
+  height: 90vh;
 }
-.main-slider .img1{
-    background-image: url('../assets/static slider.avif');
-    background-attachment: fixed ;
-    background-size: cover;
 
+.main-slider {
+  /* opacity: 0.6; */
 }
-.carousel-caption{
-   
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  
 
+.main-slider .img1 {
+  background-image: url("../assets/static slider.avif");
+  background-attachment: fixed;
+  background-size: 100% 100%;
 }
-.main-slider h5{
-font-size: 3rem;
 
+.carousel-caption {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.main-slider h5 {
+  font-size: 3rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .main-slider h5 {
+    font-size: 1.5rem;
+  }
+  .main-slider .img1 {
+    height: 60vh;
+  }
 }
