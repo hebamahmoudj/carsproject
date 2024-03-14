@@ -8,6 +8,7 @@ body {
 
 .main-slider {
   /* opacity: 0.6; */
+  position: relative;
 }
 
 .main-slider .img1 {
@@ -17,9 +18,9 @@ body {
 }
 
 .carousel-caption {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+position: absolute;
+top: 50%;
+bottom: 50%;
 }
 
 .main-slider h5 {
