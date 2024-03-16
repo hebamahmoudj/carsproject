@@ -66,6 +66,7 @@ app.post('/send-email', (req, res) => {
     // Send email
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
+            console.log(mailOptions.from)
             console.error('Error occurred:', error);
             res.status(500).json({ error: 'Failed to send email' });
         } else {
