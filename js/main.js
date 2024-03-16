@@ -5,7 +5,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     const formData = new FormData(this);
         // Define email options
         const mailOptions = {
-            from: document.getElementById('email'),
+            from: document.getElementById('email').value,
             to: 'mahmoudheba965@gmail.com',
             subject: 'New Message from Contact Form',
             text: `Email: ${email}\nMessage: ${message}`
