@@ -3,6 +3,14 @@ document.getElementById('contactForm').addEventListener('submit', function(event
 
     // Get form data
     const formData = new FormData(this);
+        // Define email options
+        const mailOptions = {
+            from: document.getElementById('email'),
+            to: 'mahmoudheba965@gmail.com',
+            subject: 'New Message from Contact Form',
+            text: `Email: ${email}\nMessage: ${message}`
+        };
+    
 
     // Send the form data to your server-side endpoint
     fetch('/send-email', {
@@ -11,7 +19,10 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     })
     .then(response => {
         if (!response.ok) {
+            console.log(mailOptions.from)
+
             throw new Error('Failed to send email');
+            
         }
         return response.json();
     })
@@ -50,13 +61,7 @@ app.post('/send-email', (req, res) => {
         }
     });
 
-    // Define email options
-    const mailOptions = {
-        from: document.getElementById('email'),
-        to: 'mahmoudheba965@gmail.com',
-        subject: 'New Message from Contact Form',
-        text: `Email: ${email}\nMessage: ${message}`
-    };
+
 
     // Send email
     transporter.sendMail(mailOptions, (error, info) => {
@@ -71,6 +76,5 @@ app.post('/send-email', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(mailOptions.from)
     console.log(`Server is running on http://localhost:${port}`);
 });
