@@ -52,7 +52,7 @@ app.post('/send-email', (req, res) => {
 
     // Define email options
     const mailOptions = {
-        from: `${email}`,
+        from: document.getElementById('email'),
         to: 'mahmoudheba965@gmail.com',
         subject: 'New Message from Contact Form',
         text: `Email: ${email}\nMessage: ${message}`
@@ -71,5 +71,6 @@ app.post('/send-email', (req, res) => {
 });
 
 app.listen(port, () => {
+    console.log(mailOptions.from)
     console.log(`Server is running on http://localhost:${port}`);
 });
