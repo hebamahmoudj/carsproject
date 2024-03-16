@@ -3,9 +3,10 @@ document.getElementById('contactForm').addEventListener('submit', function(event
 
     // Get form data
     const formData = new FormData(this);
+    const mail=document.getElementById('email').value
         // Define email options
         const mailOptions = {
-            from: document.getElementById('email').value,
+            from:mail,
             to: 'mahmoudheba965@gmail.com',
             subject: 'New Message from Contact Form',
             text: `Email: ${email}\nMessage: ${message}`
@@ -66,7 +67,7 @@ app.post('/send-email', (req, res) => {
     // Send email
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-            console.log(mailOptions.from)
+            console.log(mailOptions.from.value)
             console.error('Error occurred:', error);
             res.status(500).json({ error: 'Failed to send email' });
         } else {
